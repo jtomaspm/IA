@@ -1,0 +1,47 @@
+Precidicados:
+
+    - EmCima  -- Macaco(M) em cima da Caixa(C)
+    - NaMao -- Bananas(B) na mão de M
+    - Posicao(x,p) -- objeto x está na posição p; x: {M, B, C}, p: {A, B, C}
+    - Pendurado -- B penduradas
+    - NoChao -- M no chao
+
+Estado inicial:
+
+    -Posicao(M,A), Posicao(B,B), Posicao(C,C), NoChao, Pendurado
+
+Ações:
+
+    Deslocar(p1,p2){
+        PC: Posicao(M,p1), NoChao
+        EN: Posicao(M,p1)
+        EP: Posicao(M,p2)
+    }
+
+
+    Empurrar(p1,p2){
+        PC: Posicao(M,p1), NoChao, Posicao(C,p1)
+        EN: Posicao(M,p1), Posicao(C,p1)
+        EP: Posicao(M,p2), Posicao(C,p2)
+    }
+
+    Subir(p){
+        PC: Posicao(M,p), NoChao, Posicao(C,p)
+        EN: NoChao
+        EP: EmCima
+    }
+
+
+    Agarrar(p){
+        PC: Posicao(M,p), EmCima, Posicao(C,p), Posicao(B,p), Pendurado
+        EN: Pendurado
+        EP: NaMao
+    }
+
+
+d)
+Deslocar(A,C), Empurrar(C,B), Subir(B), Agarrar(B)
+
+
+e)
+N = (B^(d+1)-1)/(B-1)

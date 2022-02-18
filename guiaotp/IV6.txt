@@ -1,0 +1,27 @@
+Variaveis:
+- ij: i:1..9, j:1..9
+
+
+Dominio:
+- {Lij: 1-9}
+
+
+Restrições:
+-unárias:
+L23 = 4, ...
+
+
+-binárias:
+Qi Qj Qk, k!=j: val(Lij) != val(Lik)
+Qj Qi Qk, k!=i: val(Lij) != val(Lkj)
+
+Qi Qj Qm Qn, (i!=n ^ j!=m) ^ (i+2)/3==(m+2)/3 & (j+2)/3==(n+2)/3: val(Lij) != val(Lmn)
+
+=/=
+
+Arestas = { 
+    (Lij,Lmn), para Qi Qj Qm Qn,
+    (i!=n ^ j!=m) ^ (i+2)/3==(m+2)/3 & (j+2)/3==(n+2)/3
+    }
+
+r(v1,x1,v2,c2): x1 != x2

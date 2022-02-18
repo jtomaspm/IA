@@ -1,0 +1,18 @@
+a) ¬Clear(B1) ∧ ¬Clear(B2) ∧ ∃x(On(B3, x) ∧ x != Floor)
+
+    B3
+    B2
+____B1____  -> Floor
+
+Ans: 3
+
+b) Clear(B1) ⇒ Clear(B2)
+
+
+____B2__B1__ -> Floor
+
+Ans: 2
+
+
+
+
